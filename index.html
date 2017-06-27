@@ -10,265 +10,99 @@
         
         
         <!-- multistep form -->
-<form id="msform">
-	<!-- progressbar -->
-	<ul id="progressbar">
-		<li class="active">Conta</li>
-		<li>Escola</li>
-		<li>Pessoal</li>
-    <li>Finalização</li>
-	</ul>
-	<!-- fieldsets -->
-	<fieldset>
-		<h2 class="fs-title">Regista-te</h2>
-		<input id="email" type="text" name="email" placeholder="Email" />
-		<input id = "pass" type="password" name="pass" placeholder="Password" />
-		<input id = "pass-check" type="password" name="cpass" placeholder="Confirmar Password" />
-     <select name="tiporegisto">
-       <option value="0" disabled selected>Tipo de Registo</option>
-       <option value="aluno">Aluno</option>
-       <option value="prof">Professor</option>
-       <option value="pais">Pais</option>
-    </select>  
-		<input type="button" name="Next" class="next action-button" value="Próximo" />
-   
-	</fieldset>
-	<fieldset>
-		<h2 class="fs-title">Escola..afff</h2>
-		 <select name="escola">
-       <option disabled selected value = "0">Seleciona a escola</option>
-       <option value="centroestudosfatima">Centro de Estudos de Fátima</option>
-    </select> 
-		<select name ="ano">
-       <option disabled selected value ="0">Ano de escolaridade</option>
-       <option value="5">5º</option>
-       <option value="6">6º</option>
-       <option value="7">7º</option>
-       <option value="8">8º</option>
-       <option value="9">9º</option>
-       <option value="10">10º</option>
-       <option value="11">11º</option>
-       <option value="12">12º</option>
-    </select> 
-		<select id = "metade" name ="turma">
-       <option disabled selected value ="0">Turma</option>
-       <option value="a">A</option>
-       <option value="b">B</option>
-       <option value="c">C</option>
-       <option value="d">D</option>
-       <option value="e">E</option>
-       <option value="f">F</option>
-       <option value="g">G</option>
-       <option value="h">H</option>
-       <option value="i">I</option>
-       <option value="j">J</option>
-    </select> 
-    <select id = "metade" name ="numero">
-       <option disabled selected value ="0">Número</option>
-       <option value="1">1</option>
-       <option value="2">2</option>
-       <option value="3">3</option>
-       <option value="4">4</option>
-       <option value="5">5</option>
-       <option value="6">6</option>
-       <option value="7">7</option>
-       <option value="8">8</option>
-       <option value="9">9</option>
-       <option value="10">10</option>
-       <option value="11">11</option>
-      <option value="12">12</option>
-      <option value="13">13</option>
-      <option value="14">14</option>
-      <option value="15">15</option>
-      <option value="16">16</option>
-      <option value="17">17</option>
-      <option value="18">18</option>
-      <option value="19">19</option>
-      <option value="20">20</option>
-      <option value="21">21</option>
-      <option value="22">22</option>
-      <option value="23">23</option>
-      <option value="24">24</option>
-      <option value="25">25</option>
-      <option value="26">26</option>
-      <option value="27">27</option>
-      <option value="28">28</option>
-      <option value="29">29</option>
-      <option value="30">30</option>
-      <option value="31">31</option>
-      <option value="32">32</option>
-      <option value="33">33</option>
-      <option value="34">34</option>
-      <option value="35">35</option>
-    </select> 
-		<input type="button" name="previous" class="previous action-button" value="Anterior" />
-		<input type="button" name="next" class="next action-button" value="Próximo" />
-	</fieldset>
-	<fieldset>
-		<h2 class="fs-title">Já está quase!!</h2>
-		<input type="text" name="nome" placeholder="Nome" />
-		<input type="text" name="apelido" placeholder="Apelido" />
-		<select id = "metade" name ="nascdia">
-       <option disabled selected value ="0">Dia</option>
-       <option value="1">1</option>
-       <option value="2">2</option>
-       <option value="3">3</option>
-       <option value="4">4</option>
-       <option value="5">5</option>
-       <option value="6">6</option>
-       <option value="7">7</option>
-       <option value="8">8</option>
-       <option value="9">9</option>
-       <option value="10">10</option>
-       <option value="11">11</option>
-      <option value="12">12</option>
-      <option value="13">13</option>
-      <option value="14">14</option>
-      <option value="15">15</option>
-      <option value="16">16</option>
-      <option value="17">17</option>
-      <option value="18">18</option>
-      <option value="19">19</option>
-      <option value="20">20</option>
-      <option value="21">21</option>
-      <option value="22">22</option>
-      <option value="23">23</option>
-      <option value="24">24</option>
-      <option value="25">25</option>
-      <option value="26">26</option>
-      <option value="27">27</option>
-      <option value="28">28</option>
-      <option value="29">29</option>
-      <option value="30">30</option>
-      <option value="31">31</option>
-    </select> 
-    <select id = "metade" name ="nascmes">
-       <option disabled selected value ="0">Mês</option>
-       <option value="1">Jan</option>
-       <option value="2">Fev</option>
-       <option value="3">Mar</option>
-       <option value="4">Abr</option>
-       <option value="5">Mai</option>
-       <option value="6">Jun</option>
-       <option value="7">Jul</option>
-       <option value="8">Ago</option>
-       <option value="9">Set</option>
-       <option value="10">Out</option>
-       <option value="11">Nov</option>
-       <option value="12">Dez</option>
-    </select> 
-		<select name ="nascano">
-       <option disabled selected value ="0">Ano</option>
-       <option value="2002">2002</option>
-       <option value="2001">2001</option>
-       <option value="2000">2000</option>
-       <option value="1999">1999</option>
-       <option value="1998">1998</option>
-       <option value="1997">1997</option>
-       <option value="1996">1996</option>
-       <option value="1995">1995</option>
-       <option value="1994">1994</option>
-       <option value="1993">1993</option>
-       <option value="1992">1992</option>
-       <option value="1991">1991</option>
-       <option value="1990">1990</option>
-       <option value="9989">1989</option>
-       <option value="1988">1988</option>
-       <option value="1987">1987</option>
-       <option value="1986">1986</option>
-       <option value="1985">1985</option>
-       <option value="1984">1984</option>
-       <option value="1983">1983</option>
-       <option value="1982">1982</option>
-      <option value="1981">1981</option>
-      <option value="1980">1980</option>
-      <option value="1979">1979</option>
-      <option value="1978">1978</option>
-      <option value="1977">1977</option>
-      <option value="1976">1976</option>
-      <option value="1975">1975</option>
-      <option value="1974">1974</option>
-      <option value="1973">1973</option>
-      <option value="1972">1972</option>
-      <option value="1971">1971</option>
-      <option value="1970">1970</option>
-      <option value="1969">1969</option>
-      <option value="1968">1968</option>
-      <option value="1967">1967</option>
-      <option value="1966">1966</option>
-      <option value="1965">1965</option>
-      <option value="1964">1964</option>
-      <option value="1963">1963</option>
-      <option value="1962">1962</option>
-      <option value="1961">1961</option>
-      <option value="1960">1960</option>
-      <option value="1959">1959</option>
-      <option value="1958">1958</option>
-      <option value="1957">1957</option>
-      <option value="1956">1956</option>
-      <option value="1955">1955</option>
-      <option value="1954">1954</option>
-      <option value="1953">1953</option>
-      <option value="1952">1952</option>
-      <option value="1951">1951</option>
-      <option value="1950">1950</option>
-      <option value="1949">1949</option>
-      <option value="1948">1948</option>
-      <option value="1947">1947</option>
-      <option value="1946">1946</option>
-      <option value="1945">1945</option>
-      <option value="1944">1944</option>
-      <option value="1943">1943</option>
-      <option value="1942">1942</option>
-      <option value="1941">1941</option>
-      <option value="1940">1940</option>
-      <option value="1939">1939</option>
-      <option value="1938">1938</option>
-      <option value="1937">1937</option>
-      <option value="1936">1936</option>
-      <option value="1935">1935</option>
-      <option value="1934">1934</option>
-      <option value="1933">1933</option>
-      <option value="1932">1932</option>
-      <option value="1931">1931</option>
-      <option value="1930">1930</option>
-    </select> 
-		<input type="button" name="previous" class="previous action-button" value="Anterior" />
-		<input type="button" name="Next" class="next action-button" value="Próximo" />
-	</fieldset>
-  <fieldset>
-		<h2 class="fs-title">Resumindo</h2>
-    <div id="resumo"></div>
-    <form method="POST" action>
-          <div id ="captcha">
-       
-      </div>
-		<input type="button" name="previous" class="previous action-button" value="Anterior" />
-      <input type="submit" name="submit" class="submit action-button" value="Registar" /></form>
-		
-   
-	</fieldset>
-</form>
-
-
+            <form id="msform">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li>Incio</li>
+                    <li  class="active">AFP Simulator</li>
+                    <li class="active">AFP Simulator</li>
+                    <li>Finalización</li>
+                </ul>
+                <!-- fieldsets -->
+               <!-- <fieldset>
+            		<h2 class="fs-title">Bienvenido</h2>
+            		<label id="label">Hola Cesar ahora comenzaremos a calcular tu fondo de pensiones</label>
+            		
+            		<input type="button" name="Next" class="next action-button" value="Próximo" />
+            	</fieldset>-->
+              <!-- <fieldset>
+            		<h2 class="fs-title">AFP Emulator</h2>
+            		<label id="label">Sueldo mensual</label>
+            		<input id="email" type="number" name="email" placeholder="Sueldo Mensual" />
+            		<label id="label">Aportes Anuales</label>
+            		<select name="escola">
+                       <option disabled selected value = "0">Aportes anuales</option>
+                       <option value="centroestudosfatima">12</option>
+                       <option value="centroestudosfatima">6</option>
+                       <option value="centroestudosfatima">4</option>
+                       <option value="centroestudosfatima">3</option>
+                       <option value="centroestudosfatima">1</option>
+                    </select>
+            	
+            		<input type="button" name="previous" class="previous action-button" value="Anterior" />
+            		<input type="button" name="next" class="next action-button" value="Próximo" />
+            	</fieldset> -->
+                <fieldset>
+            		<h2 class="fs-title">AFP Emulator</h2>
+            		<label id="label">AFP</label>
+            		<select name="escola">
+                       <option disabled selected value = "0">AFP</option>
+                       <option value="centroestudosfatima">0</option>
+                       <option value="centroestudosfatima">1</option>
+                       <option value="centroestudosfatima">2</option>
+                       <option value="centroestudosfatima">3</option>
+                    </select>
+                    <label id="label">Edad de retiro</label>
+                    <select name="escola">
+                       <option disabled selected value = "0">Edad de retiro</option>
+                       <option value="centroestudosfatima">50</option>
+                       <option value="centroestudosfatima">55</option>
+                       <option value="centroestudosfatima">60</option>
+                       <option value="centroestudosfatima">65</option>
+                    </select>
+                    
+            	
+            		<input type="button" name="previous" class="previous action-button" value="Anterior" />
+            		<input type="button" name="Next" class="next action-button" value="Próximo" />
+            	</fieldset>
+              <!--<fieldset>
+            		<h2 class="fs-title">Finalizacion</h2>
+               
+                <form method="POST" action>
+                      <div id ="captcha">
+                   
+                  </div>
+            		<input type="button" name="previous" class="previous action-button" value="Anterior" />
+                  <input type="submit" name="submit" class="submit action-button" value="Calcular" /></form>
+            		
+               
+            	</fieldset> -->
+            	
+            	
+            	
+            <!--	<fieldset>
+            		<h2 class="fs-title">Results</h2>
+            		<label for="">Pension es : 600</label>
+            		<br>
+            		<label for="">Monto aumulado es : 2343284.09</label>
+               
+            	</fieldset> -->
+            	
+            </form>
+            
+            
         </div>
+                        
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
         
-        
-        
-<!-- jQuery -->
-<script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
-
-<!-- RECAPTCHA -->
-<script type="text/javascript" src="https://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
-
-
-
-
-<!-- jQuery easing plugin -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js" type="text/javascript"></script>
-        
-                
-        
+        <!-- RECAPTCHA -->
+        <script type="text/javascript" src="https://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+    
+        <!-- jQuery easing plugin -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js" type="text/javascript"></script>
+                    
+        <!-- Programation of finance System -->
         <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>
