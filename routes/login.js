@@ -9,12 +9,7 @@ router.get('/', function(req, res, next) {
 });
 /* POST home page */
 router.post('/', passport.authenticate('local'), function(req, res) {
-    res.redirect('/');
-});
-
-router.get('/logout', function(req, res) {
-    req.logout();
-    res.redirect('/');
+    res.send({redirect: '/'});
 });
 
 module.exports = router;

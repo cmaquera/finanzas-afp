@@ -3,17 +3,17 @@ extends layout
 block content
   if(!user)
     div.header
-      input.log.login-button(type='button', name='login', value='Login')
+      input.log.login-button(type='button', name='login', value='Login', onclick='window.location="/login"')
     div
       form#msform
         fieldset
           h2.fs-title Bienvenido
           label.label Para usar esta aplicacion es necesario registrarse, Gracias por todo.
-          input.next.action-button(type='button', name='Next', value='Registrar' href='/register')
+          input.next.action-button(type='button', name='Next', value='Registrar', onclick='window.location="/register"')
   if(user)
     div.header
-      input.log.login-button(type='button', name='login', value='Login')
-      span #{user.username}
+      input.log.login-button(type='button', name='login', value='Logout', onclick='window.location="/logout"')
+      span #{user.name}
     div
       // multistep form
       form#msform.afp
@@ -25,7 +25,7 @@ block content
           li Finalización
         fieldset
           h2.fs-title Bienvenido
-          label.label Hola #{user.username} ahora comenzaremos a calcular tu fondo de pensiones
+          label.label Hola #{user.name} ahora comenzaremos a calcular tu fondo de pensiones
           input.next.action-button(type='button', name='Next', value='Próximo')
         fieldset
           h2.fs-title AFP Emulator

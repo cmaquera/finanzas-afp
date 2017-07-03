@@ -117,24 +117,24 @@ $(".register").validate({
         }
     },
     messages: {
-        name: "Debe introducir su correo.",
-        lastname: "Debe introducir su contraseña.",
-        date: "Debe introducir su contraseña.",
-        user: "Debe introducir su contraseña.",
-        email: "Debe introducir su contraseña.",
-        pass: "Debe introducir su contraseña.",
+        name: "Debe introducir su nombre.",
+        lastname: "Debe introducir su apellido.",
+        date: "Debe introducir su fecha de nacimiento.",
+        username: "Debe introducir su usuario.",
+        email: "Debe introducir su correo.",
+        password: "Debe introducir su contraseña.",
         cpass: "Las contraseñas deben ser iguales.",
         sex: "Debe introducir su sexo."
     },
     submitHandler: function() {
-    	alert('Enviar');
         $.ajax({
 			url: '/register',
 			method: 'post',
 			data: $(".register").serialize(),
 			success: function(data){
-				
-				console.log(data);
+				if(typeof data.redirect === 'string'){
+					window.location = data.redirect;
+				}
 			}
 		});
     }
@@ -161,6 +161,9 @@ $(".login").validate({
 			data: $(".login").serialize(),
 			success: function(data){
 				console.log(data);
+				if(typeof data.redirect === 'string'){
+					window.location = data.redirect;
+				} 
 			}
 		});
     }

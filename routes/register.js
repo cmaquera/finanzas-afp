@@ -9,14 +9,23 @@ router.get('/', function(req, res, next) {
 });
 /* POST afp page */
 router.post('/', function(req, res, next) {
-  Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account) {
+  var user = new Account({
+    name: req.body.name,
+    lastname: req.body.lastname,
+    date: req.body.date,
+    username : req.body.username,
+    email: req.body.email, 
+    password : req.body.password,
+    sex: req.body.sex
+    
+  });
+  Account.register(user, req.body.password, function(err, account) {
         console.log('User authenticate');
         if (err) {
-            console.log(err);
             return res.render('register', { account : account });
         }
         passport.authenticate('local')(req, res, function () {
-            res.redirect('/');
+            res.send({ redirect: '/' });
         });
     });
 });
