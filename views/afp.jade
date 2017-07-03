@@ -20,9 +20,9 @@ block content
       fieldset
         h2.fs-title AFP Emulator
         label.label Sueldo mensual
-        input#sueldoMensual(type='number', name='sueldoMensual', placeholder='Sueldo Mensual')
+        input#sueldoMensual(type='number', name='sueldo', placeholder='Sueldo Mensual')
         label.label Aportes Anuales
-        select(name='aportesAnuales')
+        select(name='aporte')
           option(disabled='', selected='', value='0') Aportes anuales
           option(value='12') 12
           option(value='6') 6
@@ -34,14 +34,14 @@ block content
       fieldset
         h2.fs-title AFP Emulator
         label.label AFP
-        select(name='afp')
+        select(name='fondo')
           option(disabled='', selected='', value='0') AFP
           option(value='0') 0
           option(value='1') 1
           option(value='2') 2
           option(value='3') 3
         label.label Edad de retiro
-        select(name='edadRetiro')
+        select(name='edad_retiro')
           option(disabled='', selected='', value='0') Edad de retiro
           option(value='50') 50
           option(value='55') 55
@@ -53,4 +53,4 @@ block content
         h2.fs-title Finalizacion
         form
           input.previous.action-button(type='button', name='previous', value='Anterior')
-          input.afp-submit.action-button(type='submit', name='afp', value='Calcular')
+          input.afp-submit.action-button(type='submit', name='calcular', value='Calcular')

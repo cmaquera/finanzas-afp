@@ -73,17 +73,48 @@ $(".previous").click(function(){
 	});
 });
 
-$(".afp-submit").click(function(e){
-	$.ajax({
-		url: '/afp',
-		method: 'post',
-		data: $(".afp").serialize(),
-		success: function(data){
-			console.log(data);
-		}
-	});
-	e.preventDefault();
-	return false;
+$(".afp").validate({
+    rules: {
+        sueldo: { 
+        	required: true,
+        	number: true
+        },
+        aporte: { 
+        	required: true
+        },
+        fondo: { 
+        	required: true 
+        },
+        edad_retiro: { 
+        	required: true 
+        }
+    },
+    messages: {
+        sueldo: "Debe introducir su sueldo.",
+        aporte: "Debe introducir su aporte mensual.",
+        fondo: "Debe seleccionar su tipo de fondo",
+        edad_retiro: "Deve seleccionar su edad de retiro"
+    },
+    submitHandler: function() {
+        $.ajax({
+			url: '/',
+			method: 'post',
+			data: $(".afp").serialize(),
+			success: function(data){
+				$(".afp").hide();
+				$(".results").html("\
+					<div id='msform'>\
+					  <fieldset>\
+					    <h2 class='fs-title'>Results</h2>\
+					    <label> La pension es: S/." + data.pension + "</label><br>\
+					    <label> El fondo acumulado es: S/." + data.fondo_acumulado + "</label><br>\
+					    <input class='action-button' type='button'  value='Cerrar' onclick='cerrar()'/>\
+					  </fieldset>\
+					</div>");
+				
+			}
+		});
+    }
 });
 
 $(".register").validate({
@@ -168,3 +199,7 @@ $(".login").validate({
 		});
     }
 });
+
+function cerrar(){
+	window.location = '/';
+}
