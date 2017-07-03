@@ -165,6 +165,8 @@ $(".register").validate({
 			success: function(data){
 				if(typeof data.redirect === 'string'){
 					window.location = data.redirect;
+				}else{
+					$('.error-message').html('<label class="label">' +  data.error + '</label>');
 				}
 			}
 		});
@@ -191,10 +193,11 @@ $(".login").validate({
 			method: 'post',
 			data: $(".login").serialize(),
 			success: function(data){
-				console.log(data);
 				if(typeof data.redirect === 'string'){
 					window.location = data.redirect;
-				} 
+				}else{
+					$('.error-message').html('<label class="label">' +  data.error + '</label>');
+				}
 			}
 		});
     }

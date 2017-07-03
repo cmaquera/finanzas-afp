@@ -3,7 +3,7 @@ var passport = require('passport');
 var Account = require('../models/account');
 var router = express.Router();
 
-/* GET home page. */
+/* GET register page. */
 router.get('/', function(req, res, next) {
   if(req.isAuthenticated()){
     //if user is looged in, req.isAuthenticated() will return true
@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
     res.render('register', { title: 'AFP - Emulator' });
   }  
 });
-/* POST afp page */
+/* POST register page */
 router.post('/', function(req, res, next) {
   var user = new Account({
     name: req.body.name,
@@ -27,9 +27,14 @@ router.post('/', function(req, res, next) {
   Account.register(user, req.body.password, function(err, account) {
         console.log('User authenticate');
         if (err) {
-            return res.render('register', { account : account });
+            res.send({ error : err.message });
         }
         passport.authenticate('local')(req, res, function () {
+            req.session.save(function(err){
+                if(err){
+                    req.send({ error: err.message });
+                }
+            })
             res.send({ redirect: '/' });
         });
     });
