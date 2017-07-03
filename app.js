@@ -50,7 +50,7 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 // mongoose conection
-mongoose.connect('mongodb://finanzas-afp-xxelchexx.c9users.io/afp_db', { useMongoClient: true });
+mongoose.connect('mongodb://localhost/afp_db', { useMongoClient: true });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
