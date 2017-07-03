@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  div
+    form#msform.register
+      fieldset
+        h2.fs-title Registrate
+        label.label Nombre
+        input#name(type='text', name='name', placeholder='Nombre')
+        label.label Apellidos
+        input#lastname(type='text', name='lastname', placeholder='Apellidos')
+        label.label Fecha de Nacimiento
+        input#dateBorn(type='date', name='date', placeholder='Fecha de nacimiento')
+        label.label Usuario
+        input#user(type='text', name='username', placeholder='Usuario')
+        label.label Correo
+        input#email(type='email', name='email', placeholder='Correo')
+        label.label Contraseña
+        input#pass(type='password', name='password', placeholder='Contraseña')
+        label.label Confirmar contraseña
+        input#pass-check(type='password', name='cpass', placeholder='Confirmar Contraseña')
+        label.label Sexo
+        select(name='sex')
+          option(value='0', disabled='', selected='') Sexo
+          option(value='Masculino') Masculino
+          option(value='Femelino') Femelino
+        input.register-submit.action-button(type='submit', name='toRegister', value='Registrar')

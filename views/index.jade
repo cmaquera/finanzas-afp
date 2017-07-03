@@ -1,0 +1,66 @@
+extends layout
+
+block content
+  if(!user)
+    div.header
+      input.log.login-button(type='button', name='login', value='Login')
+    div
+      form#msform
+        fieldset
+          h2.fs-title Bienvenido
+          label.label Para usar esta aplicacion es necesario registrarse, Gracias por todo.
+          input.next.action-button(type='button', name='Next', value='Registrar' href='/register')
+  if(user)
+    div.header
+      input.log.login-button(type='button', name='login', value='Login')
+      span #{user.username}
+    div
+      // multistep form
+      form#msform.afp
+        // progressbar
+        ul#progressbar
+          li.active Incio
+          li AFP Simulator
+          li AFP Simulator
+          li Finalización
+        fieldset
+          h2.fs-title Bienvenido
+          label.label Hola #{user.username} ahora comenzaremos a calcular tu fondo de pensiones
+          input.next.action-button(type='button', name='Next', value='Próximo')
+        fieldset
+          h2.fs-title AFP Emulator
+          label.label Sueldo mensual
+          input#sueldoMensual(type='number', name='sueldoMensual', placeholder='Sueldo Mensual')
+          label.label Aportes Anuales
+          select(name='aportesAnuales')
+            option(disabled='', selected='', value='0') Aportes anuales
+            option(value='12') 12
+            option(value='6') 6
+            option(value='4') 4
+            option(value='3') 3
+            option(value='1') 1
+          input.previous.action-button(type='button', name='previous', value='Anterior')
+          input.next.action-button(type='button', name='next', value='Próximo')
+        fieldset
+          h2.fs-title AFP Emulator
+          label.label AFP
+          select(name='afp')
+            option(disabled='', selected='', value='0') AFP
+            option(value='0') 0
+            option(value='1') 1
+            option(value='2') 2
+            option(value='3') 3
+          label.label Edad de retiro
+          select(name='edadRetiro')
+            option(disabled='', selected='', value='0') Edad de retiro
+            option(value='50') 50
+            option(value='55') 55
+            option(value='60') 60
+            option(value='65') 65
+          input.previous.action-button(type='button', name='previous', value='Anterior')
+          input.next.action-button(type='button', name='next', value='Próximo')
+        fieldset
+          h2.fs-title Finalizacion
+          form
+            input.previous.action-button(type='button', name='previous', value='Anterior')
+            input.afp-submit.action-button(type='submit', name='afp', value='Calcular')

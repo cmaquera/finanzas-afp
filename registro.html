@@ -7,21 +7,19 @@
     </head>
     <body>
         <div>
-        
-        
         <!-- multistep form -->
             <form id="msform"> 
                 <!-- fieldsets -->
                 <fieldset>
             		<h2 class="fs-title">Registrate</h2>
-            		<label id="label">Nombre</label>
-            		<input id="email" type="text" name="email" placeholder="Nombre" />
+            		<label class="label">Nombre</label>
+            		<input id="name" type="text" name="text" placeholder="Nombre" />
             		<label class="label">Apellidos</label>
-            		<input id="email" type="text" name="email" placeholder="Apellidos" />
+            		<input id="lastname" type="text" name="text" placeholder="Apellidos" />
             		<label class="label">Fecha de Nacimiento</label>
-            		<input id="email" type="date" name="email" placeholder="Fecha de nacimiento" />
+            		<input id="dateBorn" type="date" name="date" placeholder="Fecha de nacimiento" />
             		<label class="label">Usuario</label>
-            		<input id="email" type="text" name="email" placeholder="Usuario" />
+            		<input id="user" type="text" name="user" placeholder="Usuario" />
             		<label class="label">Correo</label>
             		<input id="email" type="text" name="email" placeholder="Correo" />
             		<label class="label">Contraseña</label>
@@ -29,12 +27,12 @@
                     <label class="label">Confirmar contraseña</label>
             		<input id = "pass-check" type="password" name="cpass" placeholder="Confirmar Contraseña" />
                     <label class="label">Sexo</label>
-                    <select name="tiporegisto">
+                    <select name="sex">
                         <option value="0" disabled selected>Sexo</option>
-                        <option value="Masculino">Aluno</option>
-                        <option value="Femelino">Professor</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femelino">Femelino</option>
                     </select>  
-            		<input type="button" name="Next" class="next action-button" value="Registrar" />
+            		<input type="button" name="toRegister" class="next action-button" value="Registrar" />
             	</fieldset>
             </form>
             
