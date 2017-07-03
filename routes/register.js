@@ -5,7 +5,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('register', { title: 'AFP - Emulator' });
+  if(req.isAuthenticated()){
+    //if user is looged in, req.isAuthenticated() will return true
+    res.redirect('/');
+  } else{
+    res.render('register', { title: 'AFP - Emulator' });
+  }  
 });
 /* POST afp page */
 router.post('/', function(req, res, next) {

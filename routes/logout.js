@@ -4,7 +4,7 @@ var Account = require('../models/account');
 var router = express.Router();
 
 /* GET logout page. */
-router.get('/', function(req, res) {
+router.get('/', function(req, res, next) {
     req.logout();
     res.redirect('/');
 });
