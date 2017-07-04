@@ -26,26 +26,12 @@ router.post('/', function(req, res, next) {
   var fondo_acumulado = afp.fondo_acumulado(tasa_mensual, sueldo, aporte, edad_retiro, edad).toFixed(2);
   var pension = afp.pension(fondo_acumulado, edad_retiro, sexo).toFixed(2);
 
-  res.send({ fondo_acumulado: fondo_acumulado, pension: pension }); 
-  
-  /*
-  Account.findOne({ username: req.user.username }, function(err, account) {
-    //account.username.should.eql( req.user.username);
-    console.log("username: ", account.username);
-    account.name = 'lokita';
+  Account.findOne({ username: req.user.username, password: req.user.password }, function(err, account) {
+    account.pension = pension;
+    account.fondo_acumulado = fondo_acumulado;
+    account.save();
 
-    return res.send({ name: account.name });  
-  });
-  */
-});
-
-router.get('/ping', function(req, res){
-  Account.findOne({ username: req.user.username }, function(err, account) {
-    //account.username.should.eql( req.user.username);
-    console.log("username: ", account.name);
-    account.name = 'lokita';
-
-    //res.send({ fondo_acumulado: fondo_acumulado, pension: pension });  
+    return res.send({ fondo_acumulado: fondo_acumulado, pension: pension }); 
   });
 });
 

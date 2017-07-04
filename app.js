@@ -10,10 +10,8 @@ var LocalStrategy = require('passport-local').Strategy;
 
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var login = require('./routes/login');
 var register = require('./routes/register');
-var afp = require('./routes/afp');
 var logout = require('./routes/logout');
 
 var app = express();
@@ -39,10 +37,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // routing config
 app.use('/', index);
-app.use('/users', users);
 app.use('/login', login);
 app.use('/register', register);
-app.use('/afp', afp);
 app.use('/logout', logout);
 
 // passport config

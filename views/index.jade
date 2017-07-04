@@ -48,7 +48,6 @@ block content
           label.label AFP
           select(name='fondo')
             option(disabled='', selected='', value='0') AFP
-            option(value='0') 0
             option(value='1') 1
             option(value='2') 2
             option(value='3') 3
@@ -63,7 +62,6 @@ block content
           input.next.action-button(type='button', name='next', value='Próximo')
         fieldset
           h2.fs-title Finalizacion
-          form
-            input.previous.action-button(type='button', name='previous', value='Anterior')
-            input.afp-submit.action-button(type='submit', name='calcular', value='Calcular')
+          input.previous.action-button(type='button', name='previous', value='Anterior')
+          input.afp-submit.action-button(type='submit', name='calcular', value='Calcular')
       div.results

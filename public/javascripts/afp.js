@@ -34,9 +34,9 @@
       },
       pension: function(fondo_acumulado, edad_retiro, sexo){
           var pension = null;
-          if(edad_retiro==55 && sexo=="Masculino")
+          if(edad_retiro==50 && sexo=="Masculino")
               pension=fondo_acumulado/CRU_hombre_55;
-          else if(edad_retiro==55 && sexo=="Femenino")
+          else if(edad_retiro==50 && sexo=="Femenino")
               pension=fondo_acumulado/CRU_mujer_55;
 
           if(edad_retiro==55 && sexo=="Masculino")
@@ -44,14 +44,14 @@
           else if(edad_retiro==55 && sexo=="Femenino")
               pension=fondo_acumulado/CRU_mujer_60;
 
-          if(edad_retiro==55 && sexo=="Masculino")
+          if(edad_retiro==60 && sexo=="Masculino")
             pension=fondo_acumulado/CRU_hombre_65;
-          else if(edad_retiro==55 && sexo=="Femenino")
+          else if(edad_retiro==60 && sexo=="Femenino")
             pension=fondo_acumulado/CRU_mujer_65;
 
-          if(edad_retiro==55 && sexo=="Masculino")
+          if(edad_retiro==65 && sexo=="Masculino")
             pension=fondo_acumulado/CRU_hombre_70;
-          else if(edad_retiro==55 && sexo=="Femenino")
+          else if(edad_retiro==65 && sexo=="Femenino")
             pension=fondo_acumulado/CRU_mujer_70;
           return pension;
     }

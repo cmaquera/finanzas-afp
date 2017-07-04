@@ -9,7 +9,9 @@ var Account = new Schema({
     username : String,
     email: String, 
     password : String,
-    sex: String
+    sex: String,
+    pension: {type: Number, dedault: null},
+    fondo_acumulado: {type: Number, dedault: null}
 });
 
 Account.plugin(passportLocalMongoose);

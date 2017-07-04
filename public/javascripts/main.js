@@ -14,7 +14,8 @@ $(".next").click(function(){
 	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 	
 	//show the next fieldset
-	next_fs.show(); 
+	next_fs.show();
+	//next_fs.attr("style", "visibility: visible;"); 
 	//hide the current fieldset with style
 	current_fs.animate({opacity: 0}, {
 		step: function(now, mx) {
@@ -30,7 +31,8 @@ $(".next").click(function(){
 		}, 
 		duration: 800, 
 		complete: function(){
-			current_fs.hide();
+			//current_fs.hide();
+			current_fs.attr("style", "visibility: hidden;");
 			animating = false;
 		}, 
 		//this comes from the custom easing plugin
@@ -50,6 +52,7 @@ $(".previous").click(function(){
 	
 	//show the previous fieldset
 	previous_fs.show(); 
+	//previous_fs.attr("style", "visibility: visible;");
 	//hide the current fieldset with style
 	current_fs.animate({opacity: 0}, {
 		step: function(now, mx) {
@@ -65,7 +68,8 @@ $(".previous").click(function(){
 		}, 
 		duration: 800, 
 		complete: function(){
-			current_fs.hide();
+			//current_fs.hide();
+			current_fs.attr("style", "visibility: hidden;");
 			animating = false;
 		}, 
 		//this comes from the custom easing plugin
@@ -76,8 +80,7 @@ $(".previous").click(function(){
 $(".afp").validate({
     rules: {
         sueldo: { 
-        	required: true,
-        	number: true
+        	required: true
         },
         aporte: { 
         	required: true
@@ -89,12 +92,16 @@ $(".afp").validate({
         	required: true 
         }
     },
+
+
     messages: {
         sueldo: "Debe introducir su sueldo.",
         aporte: "Debe introducir su aporte mensual.",
         fondo: "Debe seleccionar su tipo de fondo",
         edad_retiro: "Deve seleccionar su edad de retiro"
     },
+
+
     submitHandler: function() {
         $.ajax({
 			url: '/',
@@ -147,6 +154,8 @@ $(".register").validate({
         	required: true
         }
     },
+
+
     messages: {
         name: "Debe introducir su nombre.",
         lastname: "Debe introducir su apellido.",
@@ -157,6 +166,7 @@ $(".register").validate({
         cpass: "Las contraseñas deben ser iguales.",
         sex: "Debe introducir su sexo."
     },
+
     submitHandler: function() {
         $.ajax({
 			url: '/register',
